@@ -1,4 +1,4 @@
-package me.jvt.hacking.model;
+package me.jvt.hacking.infrastructure.models;
 
 import java.util.Set;
 

@@ -1,12 +1,12 @@
-package me.jvt.hacking.controller;
+package me.jvt.hacking.infrastructure.controller;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
 import java.util.Set;
-import me.jvt.hacking.model.Api;
-import me.jvt.hacking.model.ApiResponseContainer;
-import me.jvt.hacking.service.ApiService;
+import me.jvt.hacking.domain.service.ApiService;
+import me.jvt.hacking.infrastructure.models.Api;
+import me.jvt.hacking.infrastructure.models.ApiResponseContainer;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -34,12 +34,14 @@ class ApiControllerTest {
 
     @Test
     void itReturnsInContainer() {
-      Api api = new Api("The name", "https://example.foo/bar");
+      me.jvt.hacking.domain.model.Api api =
+          new me.jvt.hacking.domain.model.Api("The name", "https://example.foo/bar");
       when(service.findAll()).thenReturn(Set.of(api));
+      Api expected = new Api("The name", "https://example.foo/bar");
 
       ApiResponseContainer actual = controller.getAll();
 
-      assertThat(actual.getApis()).contains(api);
+      assertThat(actual.getApis()).usingRecursiveFieldByFieldElementComparator().contains(expected);
     }
   }
 }

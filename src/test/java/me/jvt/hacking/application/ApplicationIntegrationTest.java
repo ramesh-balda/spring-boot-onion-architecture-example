@@ -1,4 +1,4 @@
-package me.jvt.hacking.integration;
+package me.jvt.hacking.application;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

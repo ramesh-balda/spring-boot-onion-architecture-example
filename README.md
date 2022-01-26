@@ -1,3 +1,3 @@
-# Creating a Spring Boot controller, using Test Driven Development
+# Creating a Spring Boot controller, using the Onion Architecture
 
-An example repo to go with [_Shift Your Testing Left with Spring Boot Controllers_](https://www.jvt.me/posts/2021/11/28/spring-boot-controller-tdd/).
+An example repo to go with [_Getting Started with jMolecules and the (Classical) Onion Architecture, with a Spring Boot project_](https://www.jvt.me/posts/2022/01/28/spring-boot-onion-architecture/).
